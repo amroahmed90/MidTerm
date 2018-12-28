@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Room Reservation</title>
+        <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="design.css" media="screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="navMenu">
+                <a href="http://starinn-home.netlify.com/" class="navi">Home</a>
+                <a href="http://starinn-reservation.netlify.com/" class="navi">Book a room</a>
+                <a href="http://starinn-attractions.netlify.com/" class="navi">Attractions</a>
+                <a href="http://starinn-findus.netlify.com/" class="navi">Find Us</a>
+            </div><!--end of #navMenu div-->
+
+            <h2 class="text-center" style="color:darkblue">Room Reservation</h2>
+
+            <div class="col-md-6 col-md-offset-3">
+
+            <form action="http://formspree.io/amrforever2008@gmail.com" method="POST">
+                <fieldset>
+                    <legend>Personal information:</legend>
+                    <h5>First Name:</h5>
+                    <input type="text" name="name" value="" placeholder="First Name" required>
+                    <br>
+
+                    <h5>Last Name:</h5>
+                    <input type="text" name="name" value="" placeholder="Last Name" required>
+                    <br><br>
+                    <h5>Gender:</h5>
+                    <input type="radio" name="name" value=""> Male
+                    <input type="radio" name="name" value=""> Female
+                    <br><br>
+
+
+                    <h5>ID:</h5>
+                    <h6>ID Type:</h6>
+                    <select>
+                        <option value="Passport">Passport</option>
+                        <option value="National ID">National ID</option>
+                    </select>
+                    <input type="text" name="name" value="" placeholder="ID Number">
+                    <br>
+
+                </fieldset>
+
+                <br>
+                <fieldset>
+                    <legend>Booking Details:</legend>
+
+                    <h5>Chick-in Date:</h5>
+                    <input type="date" name="name" value="" required>
+                    <br>
+                    <h5>Check-out Date:</h5>
+                    <input type="date" name="name" value="" required>
+                    <br><br>
+                    <h5>Room Type:</h5>
+                    <input type="radio" name="name" value=""> Single Room
+                    <br>
+                    <input type="radio" name="name" value=""> Double Room
+                    <br>
+                    <input type="radio" name="name" value=""> Triple Room
+                    <br><br>
+                    <h5>Number of rooms:</h5>
+                    <input type="number" name="name" value="1" min="1" max="20">
+                </fieldset>
+
+                <hr>
+                <input type="Submit" name="name" value="Book Now" class="text-center submit" style="margin-left:130px">
+                <br><br><br>
+
+
+            </form>
+            <footer class="text-center" ><hr>&copy Star Inn Hotel @2015</footer>
+
+            </div>
+
+
+
+        </div><!--End of container div-->
+
+        <script>
+
+            var again = function(){
+                var answer = prompt('Would you like to add another package?\n1- Full day meals for extra $30\n2- Guided tours to the famous attractions for extra $100.\n3- A ticket for a show at the Opera House for extra $50.\n4- One-day sea trip on a yacht with optional snorkling and diving for extra $150.\n5- Continue to reservation.')
+                var total;
+                if (answer==='1') {total=30;}
+                else if (answer==='2'){total=100;}
+                else if (answer==='3'){total=50;}
+                else if (answer==='4'){total=150;}
+                else if (answer==='5'){total=0;}
+                return total;
+            }
+
+            var promo = function () {
+                while (true) {
+                var input=prompt('Would you like to try one of our packages?\nPlease enter a valid response!')
+                if (input==='y'||input==='n'||input==='yes'||input==='no') {
+                    break;
+                    }
+                }
+
+                if (input==='n'||input==='no') {
+                    alert('Thank you for booking with us!\nYour reservation is successful.')
+                }
+
+                else if (input==='yes'||input==='y') {
+                    var packages = prompt('Please choose an offer:\n1- Full day meals for extra $30\n2- Guided tours to the famous attractions for extra $100.\n3- A ticket for a show at the Opera House for extra $50.\n4- One-day sea trip on a yacht with optional snorkling and diving for extra $150.\n5- Continue to reservation.');
+
+                    var total;
+
+                    if (packages==='1') {
+                        total=30;
+                        total=total+again();
+                        alert('Thank you for booking with us!\nYour reservation is successful.\nPlease note that there is extra $'+total+' in addition to the room(s) rent')
+                    }
+                    else if (packages==='2'){
+                        total=100;
+                        total=total+again();
+                        alert('Thank you for booking with us!\nYour reservation is successful.\nPlease note that there is extra $'+total+' in addition to the room(s) rent')
+                    }
+                    else if (packages==='3'){
+                        total=50;
+                        total=total+again();
+                        alert('Thank you for booking with us!\nYour reservation is successful.\nPlease note that there is extra $'+total+' in addition to the room(s) rent')
+                    }
+                    else if (packages==='4'){
+                        total=150;
+                        total=total+again();
+                        alert('Thank you for booking with us!\nYour reservation is successful.\nPlease note that there is extra $'+total+' in addition to the room(s) rent')
+                    }
+                    else if (packages==='5'){alert('Thank you for booking with us!\nYour reservation is successful.');}
+                }
+            }
+
+            $('.submit').click(promo);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Attractions</title>
+        <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="design.css" media="screen" title="no title" charset="utf-8">
+        <style media="screen">
+            .a11, .b11, .c11{
+                width: 200px;
+                height: 200px;
+                margin: 15px;
+                float: left;
+                border-radius: 5px;
+                border: 2px solid black;
+            }
+
+            .afterfix{
+                clear: both;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="navMenu">
+                <a href="http://starinn-home.netlify.com/" class="navi">Home</a>
+                <a href="http://starinn-reservation.netlify.com/" class="navi">Book a room</a>
+                <a href="http://starinn-attractions.netlify.com/" class="navi">Attractions</a>
+                <a href="http://starinn-findus.netlify.com/" class="navi">Find Us</a>
+            </div><!--end of #navMenu div-->
+
+            <div class="a1">
+                <h2 id="a1">Restaurants:</h2>
+                <img class="a11"  src="http://www.bobbyflaysteak.com/files/d28afc58c82bc17f2e18cef8212265c6_full_size.jpg" alt="" hidden/>
+                <img class=a11 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm6xAR1Ud6wjhYDhEbI6NZQyAZSOniWJaFf9J94WpK9MVZ8EsTyA" alt="" hidden/>
+                <img class=a11 src="https://upload.wikimedia.org/wikipedia/commons/e/e9/SixFlags-JohnnyRockets-4095.jpg" alt="" hidden/>
+
+            </div>
+
+            <div class="b1 afterfix">
+                <h2 id="b1">Entertainment:</h2>
+                <img class="b11"  src="http://www.corinthia.com/link/98900bd6741942eb8aeed5bd26865fce.aspx?id=22897" alt="" hidden/>
+                <img class="b11"  src="http://travelgaia.com/live/gallery/1/IMG_2695_thumb.jpg" alt="" hidden/>
+                <img class="b11"  src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRSsY2E5dSa0_H1uaQDw1TWp9ZuWw50zmJP83GcrVTZ6vl4Z_eT" alt="" hidden/>
+
+            </div>
+
+            <div class="c1 afterfix">
+                <h2 id="c1">Historical Places:</h2>
+                <img class="c11"  src="https://student.societyforscience.org/sites/student.societyforscience.org/files/main/articles/pyramid_free.jpg" alt="" hidden/>
+                <img class="c11"  src="http://nymphetteindia.com/wp-content/uploads/2013/12/Khan-El-Khali.jpg" alt="" hidden/>
+                <img class="c11"  src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Mohamed_Ali_Mosque_HDR.jpg" alt="" hidden/>
+            </div>
+
+
+
+
+
+        </div><!--End of container div-->
+
+        <script>
+            var showa11 = function () {
+                $('.a11').slideToggle();
+                $('.b11').hide();
+                $('.c11').hide();
+            }
+
+            var showb11 = function () {
+                $('.b11').slideToggle();
+                $('.a11').hide();
+                $('.c11').hide();
+            }
+
+            var showc11 = function () {
+                $('.c11').slideToggle();
+                $('.a11').hide();
+                $('.b11').hide();
+            }
+
+            $('.a1').click(showa11);
+            $('.a1').on('click',function () {
+                $('#a1').css('color','red')
+                $('#b1').css('color','black')
+                $('#c1').css('color','black')
+            })
+            $('.b1').click(showb11);
+            $('.b1').on('click',function () {
+                $('#b1').css('color','blue')
+                $('#a1').css('color','black')
+                $('#c1').css('color','black')
+            })
+            $('.c1').click(showc11);
+            $('.c1').on('click',function () {
+                $('#c1').css('color','green')
+                $('#b1').css('color','black')
+                $('#a1').css('color','black')
+            })
+
+        </script>
+    </body>
+</html>
